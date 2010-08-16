@@ -1,0 +1,11 @@
+*.mode1v3
+*.mode2v3
+*.pbxuser
+build/
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db

@@ -1,9 +1,9 @@
 PDColoredProgressView
 =============
 
-[PDColoredProgressView](http://p-development.nl/blog/colored-uiprogressview) is an [UIProgressView](http://developer.apple.com/iphone/library/documentation/uikit/reference/UIProgressView_Class/Reference/Reference.html) subclass, allowing you to easily change its color; a feature lacking in UIProgressView.
+[PDColoredProgressView](http://pwiddershoven.nl/blog/2009/01/04/colored-uiprogressview.html) is an [UIProgressView](http://developer.apple.com/iphone/library/documentation/uikit/reference/UIProgressView_Class/Reference/Reference.html) subclass, allowing you to easily change its color; a feature lacking in UIProgressView.
 
-[![](http://p-development.nl/img/PDColoredProgressView/PDColoredProgressView_th.png)](http://p-development.nl/img/PDColoredProgressView/PDColoredProgressView.png)
+[![](http://pwiddershoven.nl/media/img/PDColoredProgressView_small.png)](http://pwiddershoven.nl/media/img/PDColoredProgressView.png)
 
 Example
 =======

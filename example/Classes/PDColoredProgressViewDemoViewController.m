@@ -39,7 +39,7 @@
 		frame.origin.x = 10;
 		frame.origin.y = 10 * (i + 1) + 10 * i;
 		progressView.frame = frame;
-        [progressView setProgress:(i+1) * (1.0/[colors count]) animated:YES];
+        [progressView setProgress:(i+1) * (1.0/[colors count])];
 		[progressView setTintColor: [colors objectAtIndex: i]];
 		[self.view addSubview: progressView];
 		[progressView release];
@@ -64,10 +64,20 @@
 	frame.origin.x = 10;
 	frame.origin.y = 10 * (i + 1) + 10 * i + 20;
 	pView.frame = frame;
-    [pView setProgress:0.5 animated:YES];
+	pView.progress = 0.5;
 	[pView setTintColor: [UIColor blackColor]];
 	[self.view addSubview: pView];
 	[pView release];
+	
+	/** Draw a progressview and set the progress animated **/
+	PDColoredProgressView *animatedProgressView = [[PDColoredProgressView alloc] initWithProgressViewStyle: UIProgressViewStyleDefault];
+	frame = pView.frame;
+	frame.origin.y += 50;
+	animatedProgressView.frame = frame;
+	[animatedProgressView setProgress: 0.75 animated: YES];
+	[animatedProgressView setTintColor: [UIColor redColor]];
+	[self.view addSubview: animatedProgressView];
+	[animatedProgressView release];
 }
 
 - (void)didReceiveMemoryWarning {

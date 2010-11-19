@@ -25,6 +25,9 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+//
+// If you implement this class a comment on my blog (http://pwiddershoven.nl/blog/2009/01/04/colored-uiprogressview.html)
+// or mentioning in the App Store description is appreciated, but not required.
 
 #import <UIKit/UIKit.h>
 

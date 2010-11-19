@@ -12,21 +12,27 @@
 
 @implementation PDColoredProgressView
 
-- (id) initWithCoder: (NSCoder*)aDecoder {
-	if(self=[super initWithCoder: aDecoder]) {
+- (id) initWithCoder: (NSCoder*)aDecoder
+{
+	if(self=[super initWithCoder: aDecoder])
+	{
 		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
 	}
 	return self;
 }
 
-- (id) initWithProgressViewStyle: (UIProgressViewStyle) style {
-	if(self=[super initWithProgressViewStyle: style]) {
+- (id) initWithProgressViewStyle: (UIProgressViewStyle) style
+{
+	if(self=[super initWithProgressViewStyle: style])
+	{
 		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
 	}
+	
 	return self;
 }
 
-- (void)drawRect:(CGRect)rect {	
+- (void)drawRect:(CGRect)rect
+{	
 	if([self progressViewStyle] == UIProgressViewStyleDefault)
 	{
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -97,32 +103,43 @@
 	}
 }
 
-- (void) setTintColor: (UIColor *) aColor {
+- (void) setTintColor: (UIColor *) aColor
+{
 	[_tintColor release];
 	_tintColor = [aColor retain];
 }
 
-- (void)moveProgress {
-    if (self.progress < _targetProgress) {
+- (void) moveProgress
+{
+    if (self.progress < _targetProgress)
+	{
         self.progress = MIN(self.progress + 0.01, _targetProgress);
-    } else {
+    }
+	else
+	{
         [_progressTimer invalidate];
         _progressTimer = nil;
     }
 }
 
-- (void)setProgress:(CGFloat)newProgress animated:(BOOL)animated {
-    if (animated) {
+- (void) setProgress:(CGFloat)newProgress animated:(BOOL)animated
+{
+    if (animated)
+	{
         _targetProgress = newProgress;
-        if (_progressTimer == nil) {
+        if (_progressTimer == nil)
+		{
             _progressTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(moveProgress) userInfo:nil repeats:YES];
         }
-    } else {
+    }
+	else
+	{
         self.progress = newProgress;
     }
 }
 
-- (void)dealloc {
+- (void) dealloc
+{
     [super dealloc];
 	[_tintColor release];
 }

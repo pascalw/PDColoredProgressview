@@ -39,7 +39,7 @@
 		frame.origin.x = 10;
 		frame.origin.y = 10 * (i + 1) + 10 * i;
 		progressView.frame = frame;
-		progressView.progress = (i+1) * (1.0/[colors count]);
+        [progressView setProgress:(i+1) * (1.0/[colors count]) animated:YES];
 		[progressView setTintColor: [colors objectAtIndex: i]];
 		[self.view addSubview: progressView];
 		[progressView release];
@@ -54,7 +54,7 @@
 	frame.origin.x = 10;
 	frame.origin.y = 10 * (i + 1) + 10 * i;
 	progressView.frame = frame;
-	progressView.progress = 0.5;
+    progressView.progress = 0.5;
 	[self.view addSubview: progressView];
 	[progressView release];
 	
@@ -64,7 +64,7 @@
 	frame.origin.x = 10;
 	frame.origin.y = 10 * (i + 1) + 10 * i + 20;
 	pView.frame = frame;
-	pView.progress = 0.5;
+    [pView setProgress:0.5 animated:YES];
 	[pView setTintColor: [UIColor blackColor]];
 	[self.view addSubview: pView];
 	[pView release];

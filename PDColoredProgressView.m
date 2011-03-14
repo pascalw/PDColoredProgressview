@@ -115,7 +115,11 @@
 	{
         self.progress = MIN(self.progress + 0.01, _targetProgress);
     }
-	else
+    else if(self.progress > _targetProgress)
+    {
+        self.progress = MAX(self.progress - 0.01, _targetProgress);
+    }
+    else
 	{
         [_progressTimer invalidate];
         _progressTimer = nil;

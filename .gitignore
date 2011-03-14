@@ -2,6 +2,8 @@
 *.mode2v3
 *.pbxuser
 build/
+project.xcworkspace/
+xcuserdata/
 
 # OS generated files #
 ######################

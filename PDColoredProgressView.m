@@ -16,8 +16,8 @@
 {
 	if(self=[super initWithCoder: aDecoder])
 	{
-		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
-		[self setBackgroundColor: RGBACOLOR(1,1,1,1)];
+		[self setTintColor: RGBACOLOR(43,134,225,1)];
+		[self setBackgroundColor: RGBACOLOR(255,255,255,1)];
 	}
 	return self;
 }
@@ -26,7 +26,7 @@
 {
 	if(self=[super initWithProgressViewStyle: style])
 	{
-		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
+		[self setTintColor: RGBACOLOR(43,134,225,1)];
 		[self setBackgroundColor: RGBACOLOR(255,255,255,1)];
 	}
 	
@@ -43,12 +43,11 @@
 		addRoundedRectToPath(ctx, rect, 4, 4);
 		CGContextClip(ctx);
 		
-		///CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
 		CGContextSetFillColorWithColor(ctx, [_backgroundColor CGColor]);
 		CGContextFillRect(ctx, rect);
 		
 		//draw lower gray line
-		CGContextSetRGBStrokeColor(ctx, 178.0/255.0, 178.0/255.0, 178.0/255.0, 0.9);
+    CGContextSetStrokeColorWithColor(ctx, RGBACOLOR(178,178,178,0.9).CGColor);
 		CGContextSetLineWidth(ctx, 2);
 		CGContextMoveToPoint(ctx, 2.2, rect.size.height);
 		CGContextAddLineToPoint(ctx, rect.size.width - 2.2, rect.size.height);
@@ -59,13 +58,13 @@
 		upperhalf.size.height /= 1.75;
 		upperhalf.origin.y = 0;
 		
-		CGContextSetRGBFillColor(ctx, 202.0/255.0, 202.0/255.0, 202.0/255.0, 0.9);
+		CGContextSetFillColorWithColor(ctx, RGBACOLOR(202,202,202,.9).CGColor);
 		CGContextFillRect(ctx, upperhalf);
 		
 		//fill a part of the upper half with a somewhat darker grey
 		CGRect upperhalfTop = upperhalf;
 		upperhalfTop.size.height /= 2.7;
-		CGContextSetRGBFillColor(ctx, 163.0/255.0, 163.0/255.0, 163.0/255.0, 0.8);
+		CGContextSetFillColorWithColor(ctx, RGBACOLOR(163,163,163,.8).CGColor);
 		CGContextFillRect(ctx, upperhalfTop);
 		
 		//fill the progress part with our tintcolor
@@ -89,7 +88,7 @@
 		addRoundedRectToPath(ctx, progressRect, 4, 4);
 		CGContextClip(ctx);
 		CGContextSetLineWidth(ctx, 1);
-		CGContextSetRGBStrokeColor(ctx, 20.0/255.0, 20.0/255.0, 20.0/255.0, 0.6);
+    CGContextSetStrokeColorWithColor(ctx, RGBACOLOR(20,20,20,0.6).CGColor);
 		CGContextStrokeRect(ctx, progressRect);
 		
 		//draw white linear gradient over upperhalf

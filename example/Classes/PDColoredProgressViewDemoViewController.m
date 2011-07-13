@@ -22,7 +22,7 @@
 					   [UIColor redColor], 
 					   [UIColor purpleColor], 
 					   [UIColor blueColor],
-					   [UIColor colorWithRed: 27.0/255.0 green: 175.0/255.0 blue: 57.0/255.0 alpha: 1],
+             RGBCOLOR(27,175,57),
 					   [UIColor orangeColor], 
 					   [UIColor magentaColor],
 					   [UIColor brownColor],

@@ -41,6 +41,8 @@
 		progressView.frame = frame;
         [progressView setProgress:(i+1) * (1.0/[colors count])];
 		[progressView setTintColor: [colors objectAtIndex: i]];
+    // You can customize the background as well
+ 		// [progressView setBackgroundColor: [colors lastObject]];
 		[self.view addSubview: progressView];
 		[progressView release];
 	}

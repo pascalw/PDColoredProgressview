@@ -17,6 +17,7 @@
 	if(self=[super initWithCoder: aDecoder])
 	{
 		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
+		[self setBackgroundColor: RGBACOLOR(1,1,1,1)];
 	}
 	return self;
 }
@@ -26,6 +27,7 @@
 	if(self=[super initWithProgressViewStyle: style])
 	{
 		[self setTintColor: [UIColor colorWithRed: 43.0/255.0 green: 134.0/255.0 blue: 225.0/255.0 alpha: 1]];
+		[self setBackgroundColor: RGBACOLOR(255,255,255,1)];
 	}
 	
 	return self;
@@ -41,7 +43,8 @@
 		addRoundedRectToPath(ctx, rect, 4, 4);
 		CGContextClip(ctx);
 		
-		CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
+		///CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
+		CGContextSetFillColorWithColor(ctx, [_backgroundColor CGColor]);
 		CGContextFillRect(ctx, rect);
 		
 		//draw lower gray line
@@ -107,6 +110,12 @@
 {
 	[_tintColor release];
 	_tintColor = [aColor retain];
+}
+
+- (void) setBackgroundColor: (UIColor *) aColor
+{
+	[_backgroundColor release];
+	_backgroundColor = [aColor retain];
 }
 
 - (void) moveProgress

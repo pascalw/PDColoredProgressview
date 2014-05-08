@@ -31,9 +31,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 @interface PDColoredProgressView : UIProgressView {
 	UIColor *_tintColor;
+	UIColor *_backgroundColor;
     NSTimer *_progressTimer;
     CGFloat _targetProgress;
 }
@@ -42,6 +45,11 @@
  Set the desired tintColor for this control
  **/
 - (void) setTintColor: (UIColor *) aColor;
+
+/**
+ Set the desired background color for this control
+ **/
+- (void) setBackgroundColor: (UIColor *) aColor;
 
 /**
  Set progress value with option animation
